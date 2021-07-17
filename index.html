@@ -1,0 +1,65 @@
+<!doctype html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>SuitUp</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5, minimum-scale=1, user-scalable=yes">
+        <meta name="description" content="List of articles and comments">
+        <meta property="og:site_name" content="SuitUp">
+        <meta property="og:title" content="SuitUp" />
+        <meta property="og:description" content="List of articles and comments" />
+        <!-- <meta property="og:image" itemprop="image" content="https://omriknight9.github.io/my-movie-list/images/suit.png" /> -->
+        <meta property="og:type" content="website" />
+        <!-- <meta property="og:url" content="https://omriknight9.github.io/my-movie-list/"> -->
+        <link href="https://fonts.googleapis.com/css?family=Kurale&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="css/main.css">
+        <link rel="icon" href="images/suit.png">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        <script src="js/main.js"></script>
+        <script src="js/utils.js"></script>
+
+    </head>
+<body>
+
+    <main>
+        <div id="articleContainer">
+            <h2>מאמרים</h2>
+            <hr>
+            <div id="articleContent"></div>
+        </div>
+
+        <div id="chosenArticle">
+            <h2 id="chosenArticleTitle"></h2>
+            <div id="chosenArticleBtns">
+                <button class="hidden" onclick="goToComment(3)">קפוץ לתגובה...</button>
+                <button class="hidden" onclick="goToComment(1)">למעלה</button>
+                <button class="hidden" onclick="goToComment(2)">למטה</button>
+                <button id="backHomeBtn" onclick="goHome()">בחזרה למאמרים</button>
+            </div>
+            <hr>
+            <p id="chosenArticleContent"></p>
+            <p id="noComments">אין תגובות למאמר הזה</p>
+            <p id="commentsHeader">תגובות</p>
+            <div id="commetsContent"></div>
+        </div>
+    </main>
+
+    <!----------------POPUPS---------------->
+    <div id='commentsPopup'>
+        <div class="popupContent">
+            <div id="popupHeader">
+                <img src="images/close.png" id="closeImg" onclick="closePop()" alt="close">
+                <span>קפוץ לתגובה מספר...</span>
+            </div>
+            <div id="selectCommentWrapper">
+                <select name="commentSelect" id="commentSelect"></select>
+            </div>
+            <div id="popupBtnWrapper">
+                <button id="jumpToCommentBtn" onclick="jumpToComment()">קפוץ</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
